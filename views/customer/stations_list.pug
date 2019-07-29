@@ -1,0 +1,9 @@
+extends ../index.pug
+
+block content
+    h2.text.text-secondary Choose the station you want
+    each station in stations
+        a.navbar.shadow(href=`/customer/stations/${station.name}`)
+            h4.text.text-secondary #{station.name}
+            h6.text.text-secondary Available Fuel : 
+                b Petrol #{station.petrol}, Diesel #{station.diesel}

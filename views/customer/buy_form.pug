@@ -1,0 +1,20 @@
+extends ../index.pug
+
+block content
+    h4 Fill The Form To Buy You Fuel
+    form(method='post')
+        hr
+        .input-group
+            select.form-control(autofocus=true, placeholder='Choose fuel type', name="type")
+                option(value="--SELECT--")
+                option(value="petrol") Petrol
+                option(value="diesel") Diesel
+            .input-group-append
+                span.input-group-text(id='my-addon') Fuel Type
+
+        .input-group
+            input.form-control(type='number', placeholder='Number of litres' , name='n_litres')
+            .input-group-append
+                span.input-group-text(id='my-addon') Number Of Litres
+        hr
+        button.btn.btn-outline-primary(type='submit') Buy

@@ -1,0 +1,28 @@
+extends index.pug
+
+block content
+    h2.text.text-secondary Transactions For #{user}
+    if transactions.length > 0
+        .row
+            each transaction in transactions
+                if transaction.cancelled
+                    if transactions.length == 1
+                        h4.alert.alert-info No transactions done yet
+                else
+                    .col-sm-4
+                        .card.shadow(style="margin-top: 2%;")
+                            .card-header
+                                b.text.text-secondary Bought by #{transaction.buyer}
+                            .card-body
+                                p Type : #{transaction.type}
+                                p Number of Litres : #{transaction.litres}
+                                p Cost : RTGS$ #{transaction.cost}
+                            .card-footer
+                                if transaction.collected == true
+                                    p.text-success Collected
+                                else
+                                    a.btn.btn-outline-success(href=`/service/transactions/${transaction.station}/${transaction.id}`) Collect
+                                    a.btn.btn-outline-warning(href=`/service/transactions/${transaction.station}/${transaction.id}/cancel`) Cancel Transaction
+
+    else
+        h4.alert.alert-info No transactions done yet

@@ -1,0 +1,9 @@
+extends index.pug
+
+block content
+
+    h4.text.text-secondary Are you sure you want to 
+        b.text-uppercase.text-danger cancel this transaction 
+
+    form(method="post")
+        button.btn.btn-outline-success.text-uppercase(type="submit") Yes, Cancel This Transaction

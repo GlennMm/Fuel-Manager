@@ -1,0 +1,18 @@
+extends index.pug
+
+block content
+    if user
+        .container
+            h2.text.text-success #{user} you are now signed in
+            div.container.jumbtron
+                div(class="row")
+                    div(class="col-3")
+                        ul(class="navbar-nav ml-auto")
+                            li(class="nav-item")
+                                a(class="btn btn-outline-secondary" style="margin: 5px;" href=`/service/transactions/${user}`) View All Online Transactions
+                            li(class="nav-item")
+                                a(class="btn btn-outline-secondary" style="margin: 5px;" href="/service/receive") Receive Fuel
+
+
+    else
+        h2.text.text-secondary Loggin First

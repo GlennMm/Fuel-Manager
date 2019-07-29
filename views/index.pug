@@ -1,0 +1,88 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Fuel Management System
+        style
+            include ../public/bootstrap/css/bootstrap.min.css
+            include ../public/assets/css/scrolling-nav.css
+    body
+        nav(class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav")
+            div(class="container")
+                a(class="navbar-brand js-scroll-trigger" href="/") 
+                    b FUEL MANAGEMENT SYSTEM
+                if user
+                    if role == 'Station'
+                        li.nav-item
+                            a.btn.btn-danger(href="/service/log-out") Log Out [ #{user} ]
+                    else if role == 'Customer'
+                        li.nav-item
+                            a.btn.btn-danger(href="/customer/log-out") Log Out [ #{user} ]
+
+        header(class="bg-success text-white shape1")
+            div(class="container text-center")
+                h1 Welcome To Fuel Management System
+                p(class="lead") Get Fuel At The Nearest Service Station
+                
+        section
+            div(class="container")
+                div(class="row")
+                    div(class="col-3" style="border-right: 2px solid lightgreen;")
+                        ul(class="navbar-nav ml-auto")
+                            li(class="nav-item")
+                                a(class="nav-link text text-secondary js-scroll-trigger" href="/customer") Home
+                            li(class="nav-item")
+                                a(class="nav-link text text-secondary js-scroll-trigger" href="/service") Service Station
+                            li(class="nav-item")
+                                a(class="nav-link text text-secondary js-scroll-trigger" href="/about") About
+
+                    div(class="col-8")
+                        if msg
+                            .alert.alert-success(role='alert') #{msg}
+                        if err
+                            .alert.alert-danger(role='alert') #{err}
+                        block content
+
+        div(class="shape3 bg-success")
+
+        footer(class="page-footer font-small blue text-white bg-dark pt-4")
+            div(class="container-fluid text-center text-md-left")
+                div(class="row")
+                    div(class="col-md-6 mt-md-0 mt-3")
+                        h5(class="text-uppercase") Thank You For Visiting
+                        p Place an order online for fuel and get 5% off now before promotion ends.
+                        if user
+                        else
+                            a.btn.btn-outline-primary(type=button, id='s_admin', href="/service") Service Station Admin
+                    hr(class="clearfix w-100 d-md-none pb-3")            
+                    div(class="col-md-3 mb-md-0 mb-3")                  
+                        h5(class="text-uppercase") Contact Us
+                        ul(class="list-unstyled")
+                            li
+                                a(href="#!") example1@example.com
+                            li
+                                a(href="#!") example2@example.com
+                            li
+                                a(href="#!") example3@example.com
+                            
+                    div(class="col-md-3 mb-md-0 mb-3)")               
+                        h5(class="text-uppercase") Social Media
+                        ul(class="list-unstyled")
+                            li
+                                a(href="#!") Facebook
+                            li
+                                a(href="#!") Instagram
+                            li
+                                a(href="#!") Whatsapp
+                                
+            div(class="footer-copyright text-center py-3") © 2018 Copyright : 
+                a(href="https://fuelman.co.zw/") fuelman.com
+
+
+    script
+        include ../public/bootstrap/js/popper.js
+        include ../public/bootstrap/js/jquery.js
+        include ../public/bootstrap/js/bootstrap.js
+        include ../public/assets/js/scrolling-nav.js
+    

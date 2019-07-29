@@ -1,0 +1,31 @@
+extends index.pug
+
+block content
+
+    h2.text.text-secondary Receiving Fuel
+    form(method='post')
+        hr
+        .input-group
+            input.form-control(type='text', autoocus=true, placeholder='Invoice Number', required, name="invoice_id")
+            .input-group-append
+                span.input-group-text(id='my-addon') Invoice Number
+
+        .input-group
+            select.form-control(required, name='type')
+                option(value="--SELECT--")
+                option(value="petrol") Petrol
+                option(value="diesel") Diesel
+            .input-group-append
+                span.input-group-text(id='my-addon') Fuel Type
+
+        .input-group
+            input.form-control(type='number', placeholder='Number Of Litters Received' , name='amount')
+            .input-group-append
+                span.input-group-text(id='my-addon') Number Of Litters Received
+        
+        .input-group
+            input.form-control(type='number', placeholder='Cost' , name='cost')
+            .input-group-append
+                span.input-group-text(id='my-addon') Cost
+
+        button.btn.btn-outline-primary(type='submit') Receive

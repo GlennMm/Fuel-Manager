@@ -1,0 +1,17 @@
+extends index.pug
+
+block content
+    h2.text.text-secondary Station Log In
+    form(method='post', action="/service/signin")
+        hr
+        .input-group
+            input.form-control(type='email', autoocus=true, placeholder='Service Station email address', name="email")
+            .input-group-append
+                span.input-group-text(id='my-addon') E-Mail Address
+
+        .input-group
+            input.form-control(type='password', placeholder='Password' , name='password')
+            .input-group-append
+                span.input-group-text(id='my-addon') Password
+        hr
+        button.btn.btn-outline-primary(type='submit') Log-in

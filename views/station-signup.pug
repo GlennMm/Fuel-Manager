@@ -1,0 +1,40 @@
+extends index.pug
+
+block content
+    h2(class="text-success") Enter Details Of Your Service Station
+    
+    form(method='post')
+        hr
+        .input-group
+            input.form-control(type='text', placeholder='Service Station Name', name='s_s_name', aria-label='Service Station Name', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text#my-addon Service Station Name
+
+        .input-group
+            input.form-control(type='text', placeholder="General Managers Name", name='g_manager', aria-label='g_manager', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text#my-addon General Manger
+
+        .input-group
+            input.form-control(type='text', placeholder="Supervisors Name", name='supervisor', aria-label='supervisor', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text#my-addon Supervisor
+
+        .input-group
+            input.form-control(type='email', placeholder='Service Station email address', name="email", aria-label='service station email', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text(id='my-addon') E-Mail Address
+
+        .input-group
+            input.form-control(type='password', placeholder='Password' , name='password', aria-label='Password', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text(id='my-addon') Password
+        
+        .input-group
+            input.form-control(type='password', placeholder='Confirm Password' , name='confirm_password', aria-label='Password', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text(id='my-addon') Confirm Password
+
+        hr
+        button.btn.btn-outline-success(type=submit) Add Service Station
+    

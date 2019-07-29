@@ -1,0 +1,20 @@
+extends ../index.pug
+
+block content
+    if user
+        h4.text.text-secondary Welcome #{user} 
+            b choose one of the options below
+        .nav
+            a.btn.btn-outline-secondary(style='margin: 10px; width: 100px;', href='/customer/stations') Buy Fuel
+            a.btn.btn-outline-secondary(style='margin: 10px; width: 100px;', href='/customer/transactions') Previous Transaction
+        hr
+        p.text.text-secondary Thank you for loging in to your account feel free to buy fuel.
+    else
+        h4.text.text-secondary Welcome Customer 
+            b Sign Up / Loggin 
+            span To Get Started
+        .nav
+            a.btn.btn-outline-secondary(style='margin: 10px; width: 100px;', href='/customer/login') Log In
+            a.btn.btn-outline-secondary(style='margin: 10px; width: 100px;', href='/customer/signup') Sign Up
+        hr
+        p.text.text-secondary Fuel Manager is a system which enable you to find which service station currently has fuel.

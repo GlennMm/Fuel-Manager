@@ -1,0 +1,30 @@
+extends ../index.pug
+
+block content
+    .text.text-secondary(style="margin-left: 1%")
+        h2 Transactions You have Done
+        if transactions.length > 0
+            .row
+                table.table
+                    thead.thead-dark
+                        tr
+                            th(scope="col") #
+                            th(scope="col") Station
+                            th(scope="col") Type
+                            th(scope="col") Litres (Ltrs)
+                            th(scope="col") Cost (RTGS $)
+                            th(scope="col") Collect
+                    tbody
+                        each transaction, i in transactions
+                            tr
+                                th(scope="row") #{i+1}
+                                    td #{transaction.station}
+                                    td #{transaction.type}
+                                    td #{transaction.litres}
+                                    td #{transaction.cost} 
+                                    if transaction.collected
+                                        td.text-success Yes
+                                    else
+                                        td.text-warning No                        
+        else
+            p.alert.alert-warning No transactions for current user 

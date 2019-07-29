@@ -1,0 +1,40 @@
+extends ../index.pug
+
+block content
+    h2(class="text-success") Enter Details Of Your Service Station
+    
+    form(method='post' action='/service/signup')
+        hr
+        .input-group
+            input.form-control(type='text', placeholder='Username', name='customer_name', aria-label='Service Station Name', aria-describedby='my-addon')
+            .input-group-append
+                span.input-group-text#my-addon Username
+
+        .input-group
+            input.form-control(type='email', placeholder='E-mail address', name="email")
+            .input-group-append
+                span.input-group-text(id='my-addon') E-Mail Address
+        
+        .input-group
+            input.form-control(type='tell', placeholder='Phone number', name="phone_num")
+            .input-group-append
+                span.input-group-text(id='my-addon') Phone Number
+
+        .input-group
+            input.form-control(type='text', placeholder='National ID', name="nat_id")
+            .input-group-append
+                span.input-group-text(id='my-addon') National ID
+
+        .input-group
+            input.form-control(type='password', placeholder='Password' , name='password')
+            .input-group-append
+                span.input-group-text(id='my-addon') Password
+        
+        .input-group
+            input.form-control(type='password', placeholder='Confirm Password' , name='confirm_password')
+            .input-group-append
+                span.input-group-text(id='my-addon') Confirm Password
+
+        hr
+        button.btn.btn-outline-success(type=submit) Create Account
+    
